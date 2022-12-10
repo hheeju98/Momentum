@@ -7,10 +7,10 @@ const USERNAME_KEY = "username";
 
 function onLoginSubmit(event){ 
   event.preventDefault(); // 브라우저의 디폴트 동작 막아줌(새로고침 막음)
- loginForm.classList.add("hidden");
+ loginForm.classList.add(HIDDEN_CLASSNAME);
  const username = loginInput.value;
  localStorage.setItem(USERNAME_KEY, username);
- paintGreetings(username);
+ paintGreetings();
 }
 
 function paintGreetings(username){
