@@ -3,6 +3,8 @@ const toDoInput = toDoForm.querySelector("input");
 // const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
+const TODOS_KEY = "todos"
+
 const toDos = [];
 
 function saveToDos(){
@@ -36,3 +38,14 @@ saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+function sayHello(item){
+    console.log("hello", item);
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+
+if(saveToDos !== null){
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach((item)=> console.log("hello", item)); // 각각의 아이템 마다 실행
+}
