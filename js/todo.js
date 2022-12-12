@@ -13,8 +13,9 @@ function saveToDos(){
 
 function deleteToDo(event){
 const li = event.target.parentElement; // target = 클릭된 html element(property가지고 있음)
-console.log(li.id);
 li.remove();
+toDos= toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+saveToDos();
 }
 
 function paintToDo(newTodo){
